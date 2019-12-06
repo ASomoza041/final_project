@@ -5,8 +5,8 @@ var path = require('path');
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
-app.get('/:pokemonName', async(req, response) => {
-
+app.get('/poke:pokemonName', async(req, response) => {
+    
     try{
         pokemonData = await fetch(`https://pokeapi.co/api/v2/pokemon/${req.params.pokemonName}`);
 
@@ -16,13 +16,19 @@ app.get('/:pokemonName', async(req, response) => {
         const {...sprites} =json.sprites;
         console.log("sprites", sprites);
         response.render('index', {
-            name: json.name
-    
+            name: json.name,
+            img: sprites.front_default
         })
     } catch(error) {
         console.log(error)
     }
 
+});
+
+app.get('/', (req, response) => {
+    response.render('index', {
+    title: "Pokémon Fandom"
+    });
 });
 
 
