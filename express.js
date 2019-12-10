@@ -45,7 +45,18 @@ app.get('/poke', async (req, response) => {
 
     response.render('poke', {
         title: "Pokémon Fandom",
-        pikaData: pika,
+        pikaData: pika
+    })
+});
+
+app.get('/star', async (req, response) => {
+    const lukeFetch = await fetch('https://swapi.co/api/people/1');
+    luke = await lukeFetch.json();
+
+
+    response.render('star', {
+        title: "Star Wars Fandom",
+        lukeData: luke
     })
 });
 
@@ -53,7 +64,7 @@ app.get('/potter', async (req, response) => {
     const sortingHat = await fetch('https://www.potterapi.com/v1/sortingHat');
     sort = await sortingHat.json();
 
-    response.render('poke', {
+    response.render('potter', {
         title: "Harry Potter Fandom",
         hatData: sort
     })
