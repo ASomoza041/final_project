@@ -1,9 +1,9 @@
 doctype html
-html(lang='en')
+html(lang='en' style="height:100%")
     head
         title= title
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh', crossorigin='anonymous')
-    body
+    body(style="height:100%")
         nav.navbar.navbar-expand-lg.navbar-light.bg-light
             button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
@@ -22,7 +22,7 @@ html(lang='en')
                     li.nav-item
                         a.nav-link(href='/potter') Harry Potter Fandom
         p(style='margin:5px') Here's the character that began it all! Here's the description of Luke Skywalker's iconic look from the original trilogy.
-        div
+        div(style="height: 100%; background: linear-gradient(white, white, white, rgb(70, 232, 42)")
             p= luke.name
                 ul Birth Year:
                     li= luke.birth_year
